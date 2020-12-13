@@ -1,0 +1,366 @@
+body {
+   margin: 0 auto;
+   font-family: sans-serif;
+  
+}
+
+.heading-white {
+    color: #fff;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-left: 10px;
+}
+
+.heading-dark {
+    color: #000000;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-left: 10px;
+}
+
+.paragraph-white {
+    color: #fff;
+    opacity: 0.1rem;
+    line-height: 1.5;
+    margin-left: 10px;
+
+}
+
+.paragraph-dark {
+    color: #000000;
+    opacity: 0.1rem;
+    line-height: 1.5;
+    margin-left: 10px;
+
+}
+
+ /* top navbar settings */
+/* .navbar {
+    /* padding-left: 10%; */
+    /* padding-right: 10%; */
+    /* background-color: black; */
+ /* } */ 
+
+
+/*This is for brand logo*/
+a:not([href]):not([tabindex]) {
+    color: #fff;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    
+
+}
+
+.nav-link {
+    margin-right: 20px;
+}
+
+
+.btn {
+    background-color: orange;
+}
+
+/* bottom navbar settings */
+.navbar-collapse {
+    background-color: #000000;
+    color: #fff;
+    font-weight: bold;
+    font-size: medium;
+
+}
+
+a.nav-link:hover {
+    background-color: orange;
+}
+
+
+/* *********************** END OF NAVIGATION BAR SETTINGS ************************************* */
+
+/* .row {
+    padding-top: 10px;
+} */
+
+#first-section {
+    position: relative;
+    margin-top: 10px;
+    background-color: grey;
+}
+.first-image {
+    position: absolute;
+    height: 300px;
+    width: 630px;
+    background-color: #000000;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+
+/* .picture-pixel  {   
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    margin-bottom: 50%;
+} */
+
+/* *************************SECOND SECTION ********************* */
+
+
+
+#second-section {
+    position: relative;
+    margin-top: 10px;
+    
+}
+
+.second-image {
+    
+    color: #fff;
+    height: 130px;
+    width: 130px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    margin: 5% auto;
+}
+
+/* ********************THIRD SECTION***************************** */
+
+#third-section {
+    position: relative;
+    margin-top: 10px;
+    
+}
+
+.thirdsection-image {
+    
+    color: #fff;
+    height: 180px;
+    width: 290px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    margin: 5% 0 3%;
+}
+
+h4 {
+    font-weight: bold;  
+}
+
+/* ********************FOURTH SECTION***************************** */
+
+#fourth-section {
+    position: relative;
+    margin-top: 10px;
+    
+}
+
+
+.fourthsection-image {
+    /* position: absolute; */
+    height: 250px;
+    width: 450px;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    background-color: #000000;
+    /* margin-right: 1px;
+    margin-top: 10px; */
+    margin: 10px;
+}
+
+/* ********************FIFTH SECTION***************************** */
+
+#fifth-section {
+    position: relative;
+    margin-top: 10px;
+    
+}
+
+.fifthsection-image1 {
+    /* position: absolute; */
+    height: 300px;
+    width: 630px;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    background-color: #000000;
+    /* margin-right: 1px;
+    margin-top: 10px; */
+    margin: 10px 0 10px 0;
+}
+
+.fifthsection-image2 {
+    /* position: absolute; */
+    height: 300px;
+    width: 400px;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    background-color: #000000;
+    /* margin-right: 1px;
+    margin-top: 10px; */
+    margin-right: 80%;
+    margin-top: 10px;
+}
+
+/* ********************SIXTH SECTION***************************** */
+
+#sixth-section {
+    position: relative;
+    margin-top: 10px;
+    
+}
+.sixthsection-image {
+    height: 80px;
+    width: 80px;
+    background-color: #000000;
+    width: 25%;
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+
+}
+
+/* ********************SEVENTH SECTION***************************** */
+
+#seventh-section {
+    position: relative;
+    margin-top: 10px;
+    
+}
+.seventhsection-image {
+    height: 80px;
+    width: 80px;
+    background-color: #000000;
+    width: 25%;
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+
+}
+
+/* ********************EIGTH SECTION***************************** */
+#eigth-section {
+    position: relative;
+    margin-top: 30px;
+    
+    
+}
+
+.inside-eigthsection {
+    margin-bottom: 20px;
+}
+
+.eigthsection-image {
+    height: 180px;
+    width: 150px;
+    background-color: #000000;
+    width: 25%;
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+    
+
+}
+
+.eigthsection-content {
+   
+    width: 75%;
+}
+
+.catagories-text {
+    text-decoration: underline;
+    line-height: 2;
+    text-align: left;
+}
+
+/* ********************Ninth SECTION***************************** */
+#ninth-section {
+    position: relative;
+    margin-top: 30px; 
+    
+}
+
+.ninthsection-image {
+    height: 100px;
+    width: 100px;
+    background-color: #000000;
+    /* width: 25%; */
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+    
+
+}
+
+.ninthsection-content {
+    /* width: 75%;
+    float: right; */
+    margin-left: 110px;
+}
+
+.quick-links {
+    text-decoration: underline;
+    line-height: 2;
+}
+
+a.quicklinks-tag:hover{
+    background-color: #fff;
+}
+.blog-heading {
+    line-height: 3;
+}
+
+.quicklinks-heading {
+    line-height: 3;
+}
+
+.aboutus-heading {
+    line-height: 3;
+}
+
+/* ******************** TOP FOOTER SECTION***************************** */
+
+.page-footer {
+    margin-top: 30px;
+}
+.top-footer {
+    color: #fff;
+}
+.bottom-footer {
+    background-color: black;
+    color: #fff;
+    opacity: 0.1rem;
+}
+
+.footer-link {
+    color: orange;
+    text-decoration: underline;
+}
+
+a.footer-link:hover {
+    background-color: orangered;
+}
+
+/* ******************** THIS is for table edit and delete anchor tag style*****************************
+
+a{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0000ee;
+    margin-right: 4px;
+}
+
+.hide{
+    display:none;
+} */

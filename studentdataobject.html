@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="css/tablestyles.css">
+    <link rel="stylesheet" href="css/tabstyles.css">
+    <link rel="stylesheet" href="css/studentstyles.css">
+    
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+
+    <header class="bg-dark">
+        <div class="container">
+            <!-- <div class="row"> -->
+
+            <div class="top-navbar">
+
+                <nav class="navbar navbar-light">
+                    <a class=" brand navbar-brand">Basic 90</a>
+
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search our website"
+                            aria-label="Search">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Submit</button>
+                    </form>
+                </nav>
+
+
+            </div>
+
+            <div class="bottom-navbar">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">TASK1 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="table.html">TASK2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="studentdataobject.html">TASK3 & 4</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="student1button.html">TEST SINGLE BUTTON</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="studentdoublebutton.html">TEST DOUBLE BUTTON</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-padding" href="localstorage.html">TEST LOCAL STORAGE</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link nav-padding" href="crudpracticev1.html">TEST CRUD</a>
+                          </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- </div> -->
+
+
+        </div>
+    </header>
+
+    <!-- Table section -->
+
+    <div class="container table-section">
+        <div class="">
+            <h3 class="table-heading">Table</h3>
+            <button type="button" class="open-button" onclick="openCreateForm()" data-toggle="modal" data-target="#exampleModal">
+                Open
+            </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form onsubmit="event.preventDefault(); submitData();" autocomplete="off">
+
+                    
+                              <div class="row">
+                                <div class="col-25">
+                                  <label for="studentname" class="validation-error" id="studentNameValidationError">Student Name</label>
+                                </div>
+                                <div class="col-75">
+                                  <input type="text" id="studentname" name="studentname" value="" placeholder="Student name..">
+                                </div>
+                              </div>
+                    
+                              <div class="row">
+                                <div class="col-25">
+                                  <label for="fname">Father Name</label>
+                                </div>
+                                <div class="col-75">
+                                  <input type="text" id="fathername" name="fathername" value="" placeholder="Father name">
+                                </div>
+                              </div>
+                    
+                              <div class="row">
+                                <div class="col-25">
+                                  <label for="email">Email ID</label>
+                                </div>
+                                <div class="col-75">
+                                  <input type="email" id="email" name="email" value="" placeholder="Email">
+                                </div>
+                              </div>
+        
+                              <div class="row">
+                                <button type="submit" id="btnSubmit" value="Submit"> Submit </button>   
+                              </div>
+                    
+                            </form>
+                          </div>
+    
+                    </div>
+                    <div class="modal-footer">
+                      <button id="exampleModalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="btnEditSave" onclick="update();" class="btn btn-primary save-button">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <table id="tableData" class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <!-- <th scope="col">S.NO</th> -->
+                <th scope="col">Student Name</th>
+                <th scope="col">Father Name</th>
+                <!-- <th scope="col">Gender</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Department</th>
+                <th scope="col">Address</th> -->
+                <th scope="col">Email ID</th>
+                <!-- <th scope="col">Age</th>
+                <th scope="col">Password</th>
+                <th scope="col">Confirm Password</th> -->
+              </tr>
+            </thead>
+            <tbody id="tableData_body">
+              <tr>
+                <!-- <th scope="row">1</th> -->
+                <!-- <td>Asan</td>
+                <td>Sulthan</td>
+                <td>Male</td>
+                <td>01/09/1988</td>
+                <td>ECE</td>
+                <td>PKM</td>
+                <td>asan@gmail.com</td>
+                <td>32</td>
+                <td>password123</td>
+                <td>password123</td> -->
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+
+    
+
+
+
+    <!-- Footer-section -->
+
+    <footer class="page-footer font-small bg-dark">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left top-footer">
+    
+          <!-- Grid row -->
+          <div class="row">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+    
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">LINK BLOCK</h5>
+    
+              <ul class="list-unstyled">
+                <li>
+                  <a class="footer-link" href="#!">link 1</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">link 2</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">link 3</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">link 4</a>
+                </li>
+              </ul>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+    
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">LINK BLOCK</h5>
+    
+              <ul class="list-unstyled">
+                <li>
+                  <a class="footer-link" href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 4</a>
+                </li>
+              </ul>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+    
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">LINK BLOCK</h5>
+    
+              <ul class="list-unstyled">
+                <li>
+                  <a class="footer-link" href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 4</a>
+                </li>
+              </ul>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 mx-auto">
+    
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">LINK BLOCK</h5>
+    
+              <ul class="list-unstyled">
+                <li>
+                  <a class="footer-link" href="#!">Link 1</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 2</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 3</a>
+                </li>
+                <li>
+                  <a class="footer-link" href="#!">Link 4</a>
+                </li>
+              </ul>
+    
+            </div>
+            <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row -->
+    
+        </div>
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 bottom-footer">© 2009-2020 Copyright:
+          <a href="https://GOOGLE.com/"> google.com</a>
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+    <script src="tabobject.js"></script>
+
+</body>
+
+</html>

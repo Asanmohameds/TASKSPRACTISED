@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+
+    <style>
+
+        input, button{
+
+            padding: 5px;
+            height: 30px;
+            
+        }
+
+        fieldset {
+            width: 40%;
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Local Storage Basics and commands:</h1><br>
+
+    <h3>Stored permenantly/termenantly low memory data in chrome browser itself for few days/years....</h3><br>
+
+    <h3>Some Conditions: Local storage only stored the string data (both key and value should be in double quote.). So convert our data when we are storing into it to string format by 
+        the command of "JSON.stringify("key", data)";.....Also if we want to retrive the data as object format then
+        convert the string format into object by the command of JSON.parse("data")</h3><br>
+
+        <h3>proto types: Also we have some inbuilt proto type for this storage like "clear", "key", "getItem", "setItem", "removeItem"</h3>
+
+    <!-- Local storage only stored the string data. So convert our data when we are storing into it to string format by 
+    the command of "JSON.stringify("key", data)";.....Also if we want to retrive the data as object format then
+    convert the string format into object by the command of JSON.parse("data");.. -->
+
+    <!-- Also we have some inbuilt proto type for this storage like "clear", "key", "getItem", "setItem", "removeItem" -->
+
+        <fieldset>
+            <legend><h1>Insert Data</h1></legend>
+            <input type="text" placeholder="Enter Key" id="inpKey">
+            <input type="text" placeholder="Enter Value..." id="inpValue">
+            <button type="button" id="btnInsert">Insert Data</button>
+        </fieldset>
+
+        <fieldset>
+            <legend><h1>Local Storage</h1></legend>
+            <div id="lsOutput">
+
+            </div>
+        </fieldset>
+        
+    <script>
+
+        // localStorage.setItem("name", "Asan");
+        // // Age number we can give as a without quote or with quote, but data stored in storage as with quote.
+        // localStorage.setItem("Age", "32");
+
+        // console.log(localStorage.key(1));
+        // // we get output Age..
+
+        const inpKey = document.getElementById("inpKey");
+        
+        const inpValue = document.getElementById("inpValue");
+
+        const btnInsert = document.getElementById("btnInsert");
+
+        const lsOutput = document.getElementById("lsOutput");
+
+        btnInsert.onclick = function() {
+
+            const key = inpKey.value;
+
+            const value = inpValue.value;
+
+            // console.log (key);
+            // console.log(value);
+
+            // before storing into to browser must confirm the data is filled (True) or Empty by if condition.
+
+            if ( key && value) {
+
+                localStorage.setItem(key, value);
+                // once stored refresh the page by "reload" method inbuilt...
+
+                location.reload();
+                //  thats it data stored local in our browser.
+
+            }
+
+        };
+
+        // now how to retrive the data from local storage to our page.
+        // by looping concept...
+        //using "key" inbuilt index method and getItem method...
+
+        for (i=0; i < localStorage.length; i++) {
+
+            // get the index of our key by passing the i value.
+            const ourIndex = localStorage.key(i);
+
+            // colect the particular index's value in data variable..
+            const data = localStorage.getItem(ourIndex);
+
+            // passing that value to the page..
+            lsOutput.innerHTML += `${ourIndex}: ${data}<br />`;
+
+        }
+
+    </script>
+
+</body>
+</html>

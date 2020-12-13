@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operation practice.</title>
+
+    <style>
+        .container {
+            overflow: hidden;
+            margin-top: 50px
+        }
+
+        .tab {
+            float:left;
+        }
+
+        .tab-two {
+            margin-left: 50px;
+        }
+
+        .tab-two input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .table {
+            border-width: 20px;
+        }
+
+        tr {
+            transition: all 0.25s ease-in-out;
+        }
+
+        tr:hover {
+            background-color: gray;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="tab tab-one">
+            <table >
+                
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
+
+                <tbody id="table">
+                    <tr>
+                        <td>Asan</td>
+                        <td>S</td>
+                        <td>31</td>
+                    </tr>
+                </tbody>
+                
+                
+            </table>
+        </div>
+        <div class="tab tab-two">
+            First Name: <input type="text" name="fname" id="fname">
+            Last Name: <input type="text" name="lname" id="lname">
+            Age: <input type="text" name="age" id="age">
+
+            <button onclick="addNewData();">Add</button>
+            <button onclick="editSelectedRowData();">Edit</button>
+            <button onclick="deleteSelectedRow();">Delete</button>
+        </div>
+    </div>
+    
+
+    <script>
+
+        var rIndex, 
+            _table = document.getElementById("table");
+
+
+        //Check the Empty data...
+
+        function checkEmptydata() {
+
+            var isEmpty = false;
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var age = document.getElementById("age").value;
+            
+            if (fname === ""){
+                alert("First name should not be empty");
+                isEmpty = true;
+            }else if (lname === ""){
+                alert("Last name should not be empty");
+                isEmpty = true;
+            }else if (age === ""){
+                alert("Age should not be empty");
+                isEmpty = true;
+            }
+            return isEmpty;
+        }
+
+        function addNewData() {
+
+            //Get the table by ID
+
+            // declared this variable in globally---var _table = document.getElementById("table"),
+            if (!checkEmptydata()){
+
+                 //Create the new row and cells...
+                var newRow = _table.insertRow(_table.length);
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                var cell3 = newRow.insertCell(2);
+
+            // Get the value from input text box and store it into the variable...    
+                var firstname = document.getElementById("fname").value;
+                var lastname = document.getElementById("lname").value;
+                var age = document.getElementById("age").value;
+
+            //Set the values into the corresponding row cells.
+            cell1.innerHTML = firstname;
+            cell2.innerHTML = lastname;
+            cell3.innerHTML = age;
+
+            //clear the form's input text box once inserted the data...
+            document.getElementById("fname").value="";
+            document.getElementById("lname").value="";
+            document.getElementById("age").value="";
+
+            // calling this function here because the event running from this function..
+            selectedRowDispaly();
+            }
+           
+            
+            
+        }
+
+
+        // Display the selected row in input text box...
+        function selectedRowDispaly() {
+
+            // declared this variable globally---"var rIndex, _table = document.getElementById("table")"";
+            //--------------------
+
+            for (i=0; i < _table.rows.length; i++){
+
+                _table.rows[i].onclick = function(){
+
+                    // get the selected row by "this" keyword and "rowIndex" inbult keywords...
+                    rIndex = this.rowIndex-1;
+                    // console.log(this.rowIndex); 
+                    // --- we can see the index value of the row in console..
+
+                    // Then using that index value, reflect the data back to the input text box..
+                    document.getElementById("fname").value = this.cells[0].innerHTML;
+                    document.getElementById("lname").value = this.cells[1].innerHTML;
+                    document.getElementById("age").value = this.cells[2].innerHTML;
+
+                };
+
+                
+            }
+
+        }
+
+        // Edit the selected row data..
+
+        function editSelectedRowData() {
+
+            // Globally declared the variable and store the table data to that variable..
+            // var rIndex, _table = document.getElementById("table");
+            //-------------------------
+
+            // store the value to the variable...
+
+            var fname = document.getElementById("fname").value,
+                lname = document.getElementById("lname").value,
+                age = document.getElementById("age").value;
+
+            
+            if (!checkEmptydata()){
+            
+                _table.rows[rIndex].cells[0].innerHTML = fname;
+                _table.rows[rIndex].cells[1].innerHTML = lname;
+                _table.rows[rIndex].cells[2].innerHTML = age;
+
+            }
+            //clear the form's input text box once inserted the data...
+            document.getElementById("fname").value="";
+            document.getElementById("lname").value="";
+            document.getElementById("age").value="";
+
+        }
+
+        function deleteSelectedRow() {
+
+            _table.deleteRow(rIndex);
+
+            //clear the form's input text box once deleted...
+            document.getElementById("fname").value="";
+            document.getElementById("lname").value="";
+            document.getElementById("age").value="";
+        }
+
+    </script>
+
+</body>
+</html>
